@@ -1,0 +1,49 @@
+import { useState } from 'react';
+import './App.css';
+import { useDispatch, useSelector } from "react-redux";
+import { passwordGeneratorActions } from './Store/passwordGeneratorSlice';
+
+function App() {
+
+  const passwordLength = 25;
+
+  const generateNumbers = () => {
+    const array = [0, 1, 2, 3, 4, "A", "a", "B", "b", "S", "s", "<>", "<", ">", 5, 6, 7, 8, 9, "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "[]", "[", "]"];
+
+    let randomString = "";
+    for (let i = 0; i < passwordLength; i++) {
+      randomString += array[Math.floor(Math.random() * array.length)];
+    }
+    return randomString;
+  };
+
+
+  const [password, setPassword] = useState(generateNumbers());
+
+  const handleClick = () => {
+    const randomString = generateNumbers();
+    setPassword(randomString);
+    document.getElementById("password").innerHTML = password;
+  };
+
+
+  const STRONG = useSelector((store) => store.password);
+  const dispatch = useDispatch();
+
+  const handleReduxActions = () => {
+    dispatch(passwordGeneratorActions.generate());
+  };
+
+  return (
+    <>
+      <div className="container">
+        <div className="password-container">
+          <span id='password'>{STRONG}</span>
+          <button className='btn btn-success' onClick={handleClick}>Generate</button>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default App;
