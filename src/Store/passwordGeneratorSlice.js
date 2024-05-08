@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const passwordLength = 25;
+const passwordLength = 30;
 
 const generateNumbers = () => {
   const array = [
@@ -10,7 +10,7 @@ const generateNumbers = () => {
     'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
     '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', 
-    '[', ']', '{', '}', '|', ';', ':', ',', '.', '<', '>', '?', '/'
+    '[', ']', '{', '}', '|', ';', ':', ',', '.', '<', '>', '?', '/','\\'
   ];
 
   let randomString = "";

@@ -8,7 +8,11 @@ function App() {
   const STRONG = useSelector((store) => store.password);
   const dispatch = useDispatch();
 
-  const handleReduxActions = () => dispatch(passwordGeneratorActions.generate());
+  const handleReduxActions = async () => {
+    dispatch(passwordGeneratorActions.generate());
+    // const data = await fetch('https://opentdb.com/api.php?amount=10&category=19&difficulty=medium&type=multiple');
+    // console.log(data);
+  }
 
 
   return (
