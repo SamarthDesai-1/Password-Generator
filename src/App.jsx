@@ -10,8 +10,6 @@ function App() {
 
   const handleReduxActions = async () => {
     dispatch(passwordGeneratorActions.generate());
-    // const data = await fetch('https://opentdb.com/api.php?amount=10&category=19&difficulty=medium&type=multiple');
-    // console.log(data);
   }
 
 
@@ -21,7 +19,7 @@ function App() {
         <h3 className='app-heading'>Password Generator</h3>
         <div className="container">
           <div className="password-container">
-            <span id='password'>{STRONG}</span>
+            {STRONG === "" ? <h1>Create Strong Password</h1> : <span id='password'>{STRONG}</span>}
 
             <div className="btn-container">
               <button className='btn btn-success btn-standard' onClick={handleReduxActions}>Generate</button>
