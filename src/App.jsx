@@ -19,7 +19,8 @@ function App() {
         <h3 className='app-heading'>Password Generator</h3>
         <div className="container">
           <div className="password-container">
-            {STRONG === "" ? <h1>Create Strong Password</h1> : <span id='password'>{STRONG}</span>}
+
+            <span id='password'>{STRONG}</span>
 
             <div className="btn-container">
               <button className='btn btn-success btn-standard' onClick={handleReduxActions}>Generate</button>
