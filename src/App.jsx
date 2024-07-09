@@ -23,7 +23,7 @@ function App() {
             <span id='password'>{STRONG}</span>
 
             <div className="btn-container">
-              <button className='btn btn-success btn-standard' onClick={handleReduxActions}>Generate</button>
+              <button className='btn btn-warning btn-standard' onClick={handleReduxActions}>Generate</button>
             </div>
           </div>
         </div>
