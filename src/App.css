@@ -9,6 +9,8 @@
   margin-bottom: 20px;
   padding: 10px 10px;
   border-radius: 10px;
+  padding: 21px;
+  
 }
 .password-container {
   margin: 20px 0 20px 0;
@@ -35,7 +37,7 @@
   color: grey;
 }
 .btn-standard {
-  min-width: 150px;
+  max-width: auto;
 }
 #seperator {
   margin: 5px 5px;
