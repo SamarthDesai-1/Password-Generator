@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const passwordLength = 45;
+const passwordLength = 40;
 
-const generateNumbers = () => {
+const generatePassword = () => {
   const array = [
     ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
@@ -22,9 +22,23 @@ const generateNumbers = () => {
   for (let i = 0; i < passwordLength; i++) {
     randomString += newArr[Math.floor(Math.random() * array.length)];
   }
-  console.log(randomString);
+  // console.log(randomString);
   return randomString;
 };  
+
+
+const generateNumber = () => {
+  let maxLengthNumber = 10;
+  const numbers = ['1','2','3','4','5','6','7','8','9','0'];
+  let randomNumber = "";
+
+  for (let i = 0; i < maxLengthNumber; i++) {
+    randomNumber += numbers[Math.floor(Math.random() * numbers.length)];
+  }
+  // console.log(randomNumber);
+  return randomNumber;
+}
+
 
 const passwordGeneratorSlice = createSlice({
   name: "password",
@@ -33,8 +47,12 @@ const passwordGeneratorSlice = createSlice({
 
     generate: (state) => {
       state = "";
-      return state += generateNumbers();
-    }
+      return state += generatePassword();
+    },
+    numberPassword: (state) => {
+      state = "";
+      return state += generateNumber();
+    },
   }
 });
 

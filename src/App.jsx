@@ -12,6 +12,10 @@ function App() {
     dispatch(passwordGeneratorActions.generate());
   }
 
+  const handleReduxActionsForNumbers = async () => {
+    dispatch(passwordGeneratorActions.numberPassword());
+  }
+
 
   return (
     <>
@@ -24,6 +28,8 @@ function App() {
 
             <div className="btn-container">
               <button className='btn btn-warning btn-standard' onClick={handleReduxActions}>Generate</button>
+              <span id='seperator'></span>
+              <button className='btn btn-danger btn-standard' onClick={handleReduxActionsForNumbers}>Numbers</button>
             </div>
           </div>
         </div>
