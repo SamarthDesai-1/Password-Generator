@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const passwordLength = 40;
+const passwordLength = 10;
 
 const generatePassword = () => {
   const array = [
@@ -22,7 +22,7 @@ const generatePassword = () => {
   for (let i = 0; i < passwordLength; i++) {
     randomString += newArr[Math.floor(Math.random() * array.length)];
   }
-  // console.log(randomString);
+  console.log(randomString);
   return randomString;
 };  
 
@@ -35,7 +35,7 @@ const generateNumber = () => {
   for (let i = 0; i < maxLengthNumber; i++) {
     randomNumber += numbers[Math.floor(Math.random() * numbers.length)];
   }
-  // console.log(randomNumber);
+  console.log(randomNumber);
   return randomNumber;
 }
 
