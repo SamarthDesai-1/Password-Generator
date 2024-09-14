@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const passwordLength = 10;
+const passwordLength = 20;
 
 const generatePassword = () => {
   const array = [
